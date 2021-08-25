@@ -34,6 +34,17 @@ body {
   margin-bottom: 0.3rem;
 }
 
+.lista-festival {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.lista-festival input {
+  height: 2rem;
+  width: 15rem;
+}
+
 .proxLinha {
   display: flex;
   justify-content: center;

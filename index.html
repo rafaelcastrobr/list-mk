@@ -8,21 +8,24 @@
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-  <section class="topo"> 
+  <section class="topo">
     <h1 class="topo-titulo">Gerador de lista</h1>
   </section>
   <section class="lista">
-
+    <div class="lista-festival">
+      <label>Nome do Festival e Ano</label>
+      <input type="text" class="lista-festival--titulo">
+    </div>
     <div class="lista-dados">
       <label>Título:</label>
-      <input type="text" class="lista-dados--titulo">
+      <input type="text" class="lista-dados--titulo" id="99999">
       <label>Diretor:</label>
       <input type="text" class="lista-dados--diretor">
     </div>
     <div class="lista-imdb">
-      <label>IMBd:</label>
+      <label>ID IMDb:</label>
       <input type="text" class="lista-imdb--linkImdb">
-      <button onclick="imdb__btn()" class="lista-imdb__btn" >buscar filme no imdb</button>
+      <button id="99999" onclick="btn_imdb()" class="lista-imdb__btn">buscar filme no imdb</button>
     </div>
     <div class="proxLinha"></div>
 
