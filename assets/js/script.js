@@ -11,16 +11,31 @@ btnGera.addEventListener('click', () => {
       textArea.innerHTML += (`${titulo[i].value}, de ${diretor[i].value}\n`);
   }
 })
+  let titulos = [];
+  function imdb__btn(){
+    let titulo = document.querySelectorAll('.lista-dados--titulo');
+    for(let i=0; i<titulo.length; i++) {
+      titulos.push(titulo[i].value);
+    }
 
-  const btnBusca = document.querySelector('.lista-imdb__btn');
+    for(let j in titulos) {
+      if(titulos[j] === titulos[j]){
+          window.open(`http://www.imdb.com/find?q=${titulos[j]}`, '_blank')
+    
+      }
+
+    }
+      
+  }
+/*
+  const btnBusca = document.querySelectorAll('.lista-imdb__btn');
   btnBusca.addEventListener('click', () => {
     let titulo = document.querySelectorAll('.lista-dados--titulo');
-    console.log(titulo)
-    for (let i=0; i<titulo.length; i++){
-      window.open(`http://www.imdb.com/find?q=${titulo[i].value}`, '_blank')
-    };
+    console.log('oi')
+    window.open(`http://www.imdb.com/find?q=${titulos}`, '_blank')
+    //console.log(titulos)
   });
-
+*/
 
 const btnMais = document.querySelector('.lista-mais__btn');
 btnMais.addEventListener('click', () => {
@@ -53,10 +68,10 @@ btnMais.addEventListener('click', () => {
   inputIMDb.className = 'lista-imdb--linkImdb';
   inputIMDb.type = 'text';
   divIMDb.append(inputIMDb)
-  const inputIMDbButton = document.createElement('input');
+  const inputIMDbButton = document.createElement('button');
   inputIMDbButton.className = 'lista-imdb__btn';
-  inputIMDbButton.type = 'button';
-  inputIMDbButton.value = 'buscar filme no imdb';
+  inputIMDbButton.onclick = imdb__btn;
+  inputIMDbButton.innerHTML = 'buscar filme no imdb';
   divIMDb.append(inputIMDbButton);
 
   proxLinha.append(div);
