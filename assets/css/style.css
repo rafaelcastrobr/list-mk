@@ -1,0 +1,89 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 62.5%;
+  height: 100vh;
+}
+
+body {
+  background-color: #D8DDE8;
+}
+
+.topo {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.topo-titulo {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.lista {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.lista div {
+  margin-bottom: 0.3rem;
+}
+
+.proxLinha {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.proxLinha div {
+  margin-bottom: 0.3rem;
+}
+
+.lista-dados {
+  display: flex;
+  margin-top: 1rem;
+  border-top: 0.1rem dashed;
+  border-color: #f00;
+}
+
+.lista-mais__btn {
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.4rem;
+}
+
+.resultado {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 5rem;
+}
+
+.gera-resultado__btn {
+  width: 10rem;
+  height: 2rem;
+  margin-bottom: 1rem;
+  background-color: steelblue;
+  color: #D8DDE8;
+  font-weight: bold;
+  border: 0;
+}
+.gera-resultado__btn:active {
+  background-color: rgb(55, 101, 139);
+}
+
+.resultado-area {
+  width: 80%;
+}
+
+/*
+.btn {
+  display: block;
+  justify-content: center;
+}*/

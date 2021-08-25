@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MakingOf</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+  <section class="topo"> 
+    <h1 class="topo-titulo">Gerador de lista</h1>
+  </section>
+  <section class="lista">
+
+    <div class="lista-dados">
+      <label>Título:</label>
+      <input type="text" class="lista-dados--titulo">
+      <label>Diretor:</label>
+      <input type="text" class="lista-dados--diretor">
+    </div>
+    <div class="lista-imdb">
+      <label>IMBd:</label>
+      <input type="text" class="lista-imdb--linkImdb">
+      <input type="button" value="buscar filme no imdb" class="lista-imdb__btn">
+    </div>
+    <div class="proxLinha"></div>
+
+    <!--botão de adicionar mais filmes-->
+    <div class="lista-mais">
+      <input class="lista-mais__btn" type="button" value="+">
+    </div>
+  </section>
+  
+  <section class="resultado">
+    <div class="gera-resultado">
+      <input class="gera-resultado__btn" type="button" value="Gerar Resultado">
+    </div>
+    <h2>Resultado</h2>
+    <textarea class="resultado-area" cols="20" rows="15"></textarea>
+  </section>
+  <script src="./assets/js/script.js"></script>
+</body>
+</html>
