@@ -93,8 +93,6 @@ btnGera.addEventListener('click', () => {
   let id = document.querySelectorAll('.lista-imdb--linkImdb');
   const anoFest = document.querySelector('.lista-festivais__ano').value;
 
-  console.log(opFest())
-
   textArea.innerHTML = ``;
   textArea.innerHTML = `[center][img=${imgFest}][/center]\n\n
   [center][size=6][b][color=#000080]SELEÇÃO OFICIAL DE ${nomeFest.toUpperCase()} ${anoFest}[/color][/b][/size][/center]\n\n\n`
@@ -102,8 +100,7 @@ btnGera.addEventListener('click', () => {
   for (let i = 0; i < titulo.length; i++) {
     textArea.innerHTML += `[url=https://www.imdb.com/title/${id[i].value}/][img=https://imagizer.imageshack.us/a/img923/8099/6faAjm.jpg][/url] ${titulo[i].value}, de ${diretor[i].value}\n`;
   }
-  textArea.innerHTML += `\n\n\nPara conferir os vencedores dos anos anteriores, visite a página do [b][url=${linkFest}][color=#008080]Festival de ${nomeFest}[/color][/url][/b] no Makingoff.`
-    ;
+  textArea.innerHTML += `\n\n\nPara conferir os vencedores dos anos anteriores, visite a página do [b][url=${linkFest}][color=#008080]Festival de ${nomeFest}[/color][/url][/b] no Makingoff.`;
 })
 
 // === copia textarea 
