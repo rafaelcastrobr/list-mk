@@ -98,7 +98,7 @@ btnGera.addEventListener('click', () => {
   textArea.innerHTML = ``;
   textArea.innerHTML = `[center][img=${imgFest}][/center]\n\n
   [center][size=6][b][color=#000080]SELEÇÃO OFICIAL DE ${nomeFest.toUpperCase()} ${anoFest}[/color][/b][/size][/center]\n\n\n`
-  textArea.innerHTML += `No ano de ${anoFest}, ${titulo.length} filmes concorreram ao ${nomeFest}. São eles:\n\n\n`
+  textArea.innerHTML += `No ano de ${anoFest}, ${titulo.length-1} filmes concorreram ao ${nomeFest}. São eles:\n\n\n`
   for (let i = 0; i < titulo.length; i++) {
     textArea.innerHTML += `[url=https://www.imdb.com/title/${id[i].value}/][img=https://imagizer.imageshack.us/a/img923/8099/6faAjm.jpg][/url] ${titulo[i].value}, de ${diretor[i].value}\n`;
   }
