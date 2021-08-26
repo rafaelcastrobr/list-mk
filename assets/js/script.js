@@ -62,7 +62,7 @@ function opFest() {
     case 12:
       nomeFest = 'Rotterdam';
       linkFest = `https://makingoff.org/forum/index.php?showtopic=39184`
-      imgFest = `https://i.imgur.com/lW4bEXk.jpg`;
+      imgFest = `https://i.imgur.com/u1jWMDp.jpg`;
       break;
     case 13:
       nomeFest = 'Sundance';
