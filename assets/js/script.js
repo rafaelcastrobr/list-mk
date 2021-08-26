@@ -159,7 +159,7 @@ btnMais.addEventListener('click', () => {
   const inputIMDbButton = document.createElement('button');
   inputIMDbButton.className = `lista-imdb__btn`;
   inputIMDbButton.id = `${numAlea}`;
-  inputIMDbButton.innerHTML = 'buscar filme no imdb';
+  inputIMDbButton.innerHTML = 'buscar título no imdb';
   inputIMDbButton.onclick = btn_imdb;
   divIMDb.append(inputIMDbButton);
 
