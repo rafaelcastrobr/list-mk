@@ -13,8 +13,27 @@
   </section>
   <section class="lista">
     <div class="lista-festival">
-      <label>Nome do Festival e Ano</label>
-      <input type="text" class="lista-festival--titulo">
+      <label>Nome do Festival</label>
+      <select name="festivais" id="festivais">
+        <option value=""></option>
+        <option value="ariel">Ariel</option>
+        <option value="berlim">Berlim</option>
+        <option value="brasilia">Brasília</option>
+        <option value="cannes">Cannes</option>
+        <option value="cine-Pe">Cine PE</option>
+        <option value="gramado">Gramado</option>
+        <option value="istambul">Istambul</option>
+        <option value="locarno">Locarno</option>
+        <option value="moscou">Moscou</option>
+        <option value="oscar-Internacional">Oscar Internacional</option>
+        <option value="san-Sebastián">San Sebastian</option>
+        <option value="rotterdam">Rotterdam</option>
+        <option value="sundance">Sundance</option>
+        <option value="toronto">Toronto</option>
+        <option value="veneza">Veneza</option>
+      </select>
+      <label >Ano</label>
+      <input type="text" class="lista-festivais__ano">
     </div>
     <div class="lista-dados">
       <label>Título:</label>
@@ -40,7 +59,8 @@
       <input class="gera-resultado__btn" type="button" value="Gerar Resultado">
     </div>
     <h2>Resultado</h2>
-    <textarea class="resultado-area" cols="20" rows="15"></textarea>
+    <input type="button" class="gera-resultado__copia" value="COPIAR">
+    <textarea class="resultado-area" cols="20" rows="25"></textarea>
   </section>
   <script src="./assets/js/script.js"></script>
 </body>

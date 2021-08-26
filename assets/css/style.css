@@ -40,10 +40,6 @@ body {
   justify-content: center;
   align-items: center;
 }
-.lista-festival input {
-  height: 2rem;
-  width: 15rem;
-}
 
 .proxLinha {
   display: flex;
@@ -91,6 +87,13 @@ body {
 
 .resultado-area {
   width: 80%;
+  margin-bottom: 5rem;
+}
+
+.gera-resultado__copia {
+  margin: 1rem 0 1rem;
+  width: 5rem;
+  height: 2rem;
 }
 
 /*
