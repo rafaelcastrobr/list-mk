@@ -3,81 +3,97 @@ function opFest() {
   let num = festivais.selectedIndex;
   switch (num) {
     case 0:
+      none = `none`;
       return alert('Escolha um Festival');
     case 1:
       nomeFest = 'Ariel';
       linkFest = `http://makingoff.org/forum/index.php?showtopic=45183`
       imgFest = `https://i.imgur.com/QDFiQBN.jpg`;
+      none = `flex`;
       break;
     case 2:
       nomeFest = 'Berlim';
       linkFest = `https://makingoff.org/forum/index.php?showtopic=37666`
       imgFest = `https://i.imgur.com/lW4bEXk.jpg`;
+      none = `flex`;
       break;
     case 3:
       nomeFest = 'Brasília';
       linkFest = `https://makingoff.org/forum/index.php?showtopic=39283`;
       imgFest = `https://i.imgur.com/fvjhvYf.jpg`;
+      none = `flex`;
       break;
     case 4:
       nomeFest = 'Cannes';
       linkFest = `https://makingoff.org/forum/index.php?showtopic=37665`;
       imgFest = `https://i.imgur.com/l8sGx2f.jpg`;
+      none = `flex`;
       break;
     case 5:
       nomeFest = 'Cine PE';
       linkFest = `https://makingoff.org/forum/index.php?showtopic=45541`;
       imgFest = `https://i.imgur.com/KEINeuG.jpg`;
+      none = `flex`;
       break;
     case 6:
       nomeFest = 'Gramado';
       linkFest = `https://makingoff.org/forum/index.php?showtopic=37668`
       imgFest = `https://i.imgur.com/cua7aPt.jpg`;
+      none = `flex`;
       break;
     case 7:
       nomeFest = 'Istambul';
       linkFest = `https://makingoff.org/forum/index.php?showtopic=42729`
       imgFest = `https://i.imgur.com/UKDHCeb.jpg`;
+      none = `flex`;
       break;
     case 8:
       nomeFest = 'Locarno';
       linkFest = `https://makingoff.org/forum/index.php?showtopic=39831`;
       imgFest = `https://i.imgur.com/92RbKcA.png`;
+      none = `flex`;
       break;
     case 9:
       nomeFest = 'Moscou';
       linkFest = `https://makingoff.org/forum/index.php?showtopic=42283`;
       imgFest = `https://i.imgur.com/es1361q.jpg`;
+      none = `flex`;
       break;
     case 10:
       nomeFest = 'Oscar Internacional';
       linkFest = `https://makingoff.org/forum/index.php?showtopic=37706`;
       imgFest = `https://i.imgur.com/FcOhbBE.png`;
+      none = `flex`;
       break;
     case 11:
       nomeFest = 'San Sebastián';
       linkFest = `https://makingoff.org/forum/index.php?showtopic=38925`
       imgFest = `https://i.imgur.com/Xa28A4x.jpg`;
+      none = `flex`;
       break;
     case 12:
       nomeFest = 'Rotterdam';
       linkFest = `https://makingoff.org/forum/index.php?showtopic=39184`
       imgFest = `https://i.imgur.com/u1jWMDp.jpg`;
+      none = `flex`;
       break;
     case 13:
       nomeFest = 'Sundance';
       linkFest = `https://makingoff.org/forum/index.php?showtopic=43165`;
       imgFest = `https://i.imgur.com/9Ym26Lx.jpg`;
+      none = `flex`;
       break;
     case 14:
       nomeFest = 'Toronto';
       linkFest = `https://makingoff.org/forum/index.php?showtopic=43078`;
       imgFest = `https://i.imgur.com/Lwf0e49.jpg`;
+      none = `flex`;
       break;
     case 15:
       nomeFest = 'Veneza';
       linkFest = `https://makingoff.org/forum/index.php?showtopic=37667`;
       imgFest = `https://i.imgur.com/n4mXViH.png`;
+      none = `flex`;
       break;
   }
 }
@@ -87,14 +103,15 @@ function opFest() {
 // ==== botão que gera resultado
 const btnGera = document.querySelector('.gera-resultado__btn');
 btnGera.addEventListener('click', () => {
-  const textArea = document.querySelector('.resultado-area');
   let titulo = document.querySelectorAll('.lista-dados--titulo');
   let diretor = document.querySelectorAll('.lista-dados--diretor');
   let id = document.querySelectorAll('.lista-imdb--linkImdb');
   const anoFest = document.querySelector('.lista-festivais__ano').value;
-  opFest()
-
-
+  opFest();
+  
+  document.querySelector('#disabled').style.display = none;
+  
+  const textArea = document.querySelector('.resultado-area');
   textArea.innerHTML = ``;
   textArea.innerHTML = `[center][img=${imgFest}][/center]\n\n
   [center][size=6][b][color=#000080]SELEÇÃO OFICIAL DE ${nomeFest.toUpperCase()} ${anoFest}[/color][/b][/size][/center]\n\n\n`

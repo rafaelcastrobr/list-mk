@@ -13,6 +13,10 @@ body {
   background-color: #D8DDE8;
 }
 
+#disabled {
+  display: none;
+}
+
 .topo {
   display: flex;
   justify-content: center;
@@ -69,7 +73,13 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 5rem;
+  margin-top: 1rem;
+}
+
+.gera-resultado {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
 .gera-resultado__btn {
