@@ -33,19 +33,24 @@
         <option value="toronto">Toronto</option>
         <option value="veneza">Veneza</option>
       </select>
-      <label >Ano</label>
-      <input type="text" class="lista-festivais__ano">
+      <label>ANO</label>
+      <input type="text" class="lista-festivais__ano -input">
     </div>
     <div class="lista-dados">
-      <label>Título:</label>
-      <input type="text" class="lista-dados--titulo" id="99999">
-      <label>Diretor:</label>
-      <input type="text" class="lista-dados--diretor">
-    </div>
-    <div class="lista-imdb">
-      <label>ID IMDb:</label>
-      <input type="text" class="lista-imdb--linkImdb">
-      <button id="99999" onclick="btn_imdb()" class="lista-imdb__btn">buscar título no imdb</button>
+      <div>
+        <label>TÍTULO: </label>
+        <input type="text" class="lista-dados--titulo -input" id="99999">
+        <button id="99999" onclick="btn_imdb()" class="lista-imdb__btn">buscar título no imdb</button>
+      </div>
+      <div>
+        <label>DIRETOR: </label>
+        <input type="text" class="lista-dados--diretor -input">
+      </div>
+      <div>
+        <label>ID IMDB:</label>
+        <input id="99991" type="text" class="lista-imdb--linkImdb -input">
+        <button id="99991" onclick="btn_mko()" class="lista-imdb__btn">buscar ID no MKO</button>
+      </div>
     </div>
     <div class="proxLinha"></div>
 
@@ -63,9 +68,6 @@
     <p>...</p>
     <input type="button" class="gera-resultado__copia" value="COPIAR">
     <textarea class="resultado-area" cols="20" rows="25"></textarea>
-  </section>
-  <section class="topo">
-    <h1 class="topo-titulo">Gerador de lista premiados</h1>
   </section>
   <script src="./assets/js/script.js"></script>
 </body>

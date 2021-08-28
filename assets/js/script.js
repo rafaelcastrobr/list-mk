@@ -142,46 +142,66 @@ function getRandom(max = 1, min = 10000) {
 const btnMais = document.querySelector('.lista-mais__btn');
 btnMais.addEventListener('click', () => {
   const numAlea = getRandom();
+  const numAleaId = getRandom();
 
   // ===== titulo
   const proxLinha = document.querySelector('.proxLinha');
   const div = document.createElement('div');
   div.className = 'lista-dados';
-  const label = document.createElement('label');
-  label.innerHTML = 'Título:';
-  div.append(label);
-  const input = document.createElement('input');
-  input.className = `lista-dados--titulo`;
-  input.type = 'text';
-  input.id = `${numAlea}`;
-  div.append(input);
-  // ===== diretor
-  const labelD = document.createElement('label');
-  labelD.innerHTML = 'Diretor:';
-  div.append(labelD);
-  const inputD = document.createElement('input');
-  inputD.className = 'lista-dados--diretor';
-  inputD.type = 'text';
-  div.append(inputD)
-  // ===== IMDb
-  const divIMDb = document.createElement('div');
-  divIMDb.className = 'lista-imdb';
-  const labelIMDb = document.createElement('label');
-  labelIMDb.innerHTML = 'ID IMDb:';
-  divIMDb.append(labelIMDb);
-  const inputIMDb = document.createElement('input');
-  inputIMDb.className = 'lista-imdb--linkImdb';
-  inputIMDb.type = 'text';
-  divIMDb.append(inputIMDb)
+
+
+  const divT = document.createElement('div');
+  div.append(divT); 
+
+  const labelT = document.createElement('label');
+  labelT.innerHTML = 'TÍTULO: ';
+  divT.append(labelT);
+  const inputT = document.createElement('input');
+  inputT.className = `lista-dados--titulo -input`;
+  inputT.type = 'text';
+  inputT.id = `${numAlea}`;
+  divT.append(inputT);
   const inputIMDbButton = document.createElement('button');
   inputIMDbButton.className = `lista-imdb__btn`;
   inputIMDbButton.id = `${numAlea}`;
   inputIMDbButton.innerHTML = 'buscar título no imdb';
   inputIMDbButton.onclick = btn_imdb;
-  divIMDb.append(inputIMDbButton);
+  divT.append(inputIMDbButton);
+
+
+  // ===== diretor
+  const divD = document.createElement('div');
+  div.append(divD);
+  const labelD = document.createElement('label');
+  labelD.innerHTML = 'DIRETOR: ';
+  divD.append(labelD);
+  const inputD = document.createElement('input');
+  inputD.className = 'lista-dados--diretor -input';
+  inputD.type = 'text';
+  divD.append(inputD);
+
+
+  // ===== IMDb
+  const divIMDb = document.createElement('div');
+  div.append(divIMDb);
+  divIMDb.className = 'lista-imdb';
+  const labelIMDb = document.createElement('label');
+  labelIMDb.innerHTML = 'ID IMDb:';
+  divIMDb.append(labelIMDb);
+  const inputIMDb = document.createElement('input');
+  inputIMDb.className = 'lista-imdb--linkImdb -input';
+  inputIMDb.type = 'text';
+  inputIMDb.id = `${numAleaId}`
+  divIMDb.append(inputIMDb);
+  const inputId = document.createElement('button');
+  inputId.className = `lista-imdb__btn`;
+  inputId.id = `${numAleaId}`;
+  inputId.innerHTML = 'buscar ID no MKO';
+  inputId.onclick = btn_mko;
+  divIMDb.append(inputId);
+  
 
   proxLinha.append(div);
-  proxLinha.appendChild(divIMDb);
 })
 
 // ==== botão que busca no imdb
@@ -194,3 +214,14 @@ function btn_imdb() {
   window.open(`http://www.imdb.com/find?q=${nomeFilm}`, '_blank')
 
 }
+
+function btn_mko() {
+
+  let numId = event.target.id;
+
+  const idmko = document.getElementById(`${numId}`).value;
+
+  window.open(`https://indice.makingoff.org/index.php?origem=busca&search_term=${idmko}`, '_blank')
+
+}
+
