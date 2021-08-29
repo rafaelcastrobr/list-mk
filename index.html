@@ -10,7 +10,7 @@
 </head>
 <body>
   <section class="topo">
-    <h1 class="topo-titulo">Gerador de lista</h1>
+    <h1 class="topo-titulo">Gerador de Lista</h1>
   </section>
   <section class="lista">
     <div class="lista-festival">
@@ -69,6 +69,52 @@
     <input type="button" class="gera-resultado__copia" value="COPIAR">
     <textarea class="resultado-area" cols="20" rows="25"></textarea>
   </section>
+  
+  
+  <section class="topo">
+    <h1 class="topo-titulo">Gerador de Lista Premiados</h1>
+  </section>
+  <section class="premiados">
+    <div class="lista-dados">
+      <div>
+        <label>TÍTULO BR: </label>
+        <input type="text" class="premiados-titulo--e -input" id="99992">
+        <button id="99992" onclick="btn_imdb()" class="lista-imdb__btn">buscar título no imdb</button>
+      </div>
+      <div>
+        <label>TÍTULO ORI: </label>
+        <input type="text" class="premiados-titulori--e -input">
+      </div>
+      <div>
+        <label>DIRETOR: </label>
+        <input type="text" class="premiados-diretor--e -input">
+      </div>
+      <div>
+        <label>PAÍS: </label>
+        <input type="tex" class="premiados-pais--e -input">
+      </div>
+      <div>
+        <label>IMG: </label>
+        <input type="tex" class="premiados-img--e -input">
+      </div>
+      <div>
+        <label>ID IMDB:</label>
+        <input id="99993" type="text" class="premiados-imdb--e -input">
+        <button id="99993" onclick="btn_mko()" class="lista-imdb__btn">buscar ID no MKO</button>
+      </div>
+    </div>
+  </section>
+  <div class="gera-resultado">
+    <input class="gera-resultado__btn--premiados" type="button" value="Gerar Resultado">
+  </div>
+  <section id="-disabled" class="resultado">
+    <h2>Resultado</h2>
+    <p>...</p>
+    <input type="button" class="gera-resultado__copia--premiados" value="COPIAR">
+    <textarea class="resultado-area--premiados" cols="20" rows="25"></textarea>
+  </section>
+  
+
   <script src="./assets/js/script.js"></script>
 </body>
 </html>

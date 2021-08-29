@@ -111,8 +111,7 @@ btnGera.addEventListener('click', () => {
   
   document.querySelector('#disabled').style.display = none;
   
-  const textArea = document.querySelector('.resultado-area');
-  textArea.innerHTML = ``;
+  
   textArea.innerHTML = `[center][img=${imgFest}][/center]\n\n
   [center][size=6][b][color=#000080]SELEÇÃO OFICIAL DE ${nomeFest.toUpperCase()} ${anoFest}[/color][/b][/size][/center]\n\n\n`
   textArea.innerHTML += `No ano de ${anoFest}, ${titulo.length} filmes concorreram ao ${nomeFest}. São eles:\n\n\n`
@@ -225,3 +224,36 @@ function btn_mko() {
 
 }
 
+// 
+//  ==== Premiados
+//
+
+document.querySelector('.gera-resultado__btn--premiados').addEventListener('click', () => {
+  let preTitulosBrE = document.querySelector('.premiados-titulo--e').value;
+  let preTitulosOriE = document.querySelector('.premiados-titulori--e').value;
+  let preDiretorE = document.querySelector('.premiados-diretor--e').value;
+  let prePaisE = document.querySelector('.premiados-pais--e').value;
+  let preImgE = document.querySelector('.premiados-img--e').value;
+  let preImdbE = document.querySelector('.premiados-imdb--e').value;
+
+  const textArea = document.querySelector('.resultado-area--premiados');
+  textArea.innerHTML = ``;
+  textArea.innerHTML = `[tr][posterMasc]**********[/posterMasc][infoMasc]**********[/infoMasc][/tr][tr][elenco][table][tdPeq][url=http://indice.makingoff.org/index.php?origem=busca&search_term=${preImdbE}&search_type=TP&search_sort_by=tid&search_sort_order=DESC&submit=Pesquisar]
+  [img=${preImgE}][/url][/tdPeq][tdGde][color=#000080][b][size=3][url=http://indice.makingoff.org/index.php?origem=busca&search_term=${preImdbE}&search_type=TP&search_sort_by=tid&search_sort_order=DESC&submit=Pesquisar]${preTitulosBrE}[/url][/size][/b][/color]
+  [color=#696969](${preTitulosOriE})[/color]
+  Direção: [b]${preDiretorE}[/b]
+  País: [b]${prePaisE}[/b]
+   
+  [url=https://www.imdb.com/title/${preImdbE}][img=http://i240.photobucket.com/albums/ff175/mfccorrea/MakingOff/IMDb36.jpg][/url][/tdGde][/table][/elenco]`
+
+});
+
+
+// === copia textarea 
+document.querySelector('.gera-resultado__copia--premiados').addEventListener('click', function () {
+  const textArea = document.querySelector('.resultado-area--premiados');
+  textArea.select();
+  document.execCommand('copy');
+  console.log('po')
+  alert('copiado')
+})
