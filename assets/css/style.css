@@ -156,3 +156,7 @@ Premiados
   width: 80%;
   margin-bottom: 5rem;
 }
+
+#premiados-disabled{
+  display: none;
+}

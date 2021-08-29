@@ -236,16 +236,79 @@ document.querySelector('.gera-resultado__btn--premiados').addEventListener('clic
   let preImgE = document.querySelector('.premiados-img--e').value;
   let preImdbE = document.querySelector('.premiados-imdb--e').value;
 
-  const textArea = document.querySelector('.resultado-area--premiados');
-  textArea.innerHTML = ``;
-  textArea.innerHTML = `[tr][posterMasc]**********[/posterMasc][infoMasc]**********[/infoMasc][/tr][tr][elenco][table][tdPeq][url=http://indice.makingoff.org/index.php?origem=busca&search_term=${preImdbE}&search_type=TP&search_sort_by=tid&search_sort_order=DESC&submit=Pesquisar]
-  [img=${preImgE}][/url][/tdPeq][tdGde][color=#000080][b][size=3][url=http://indice.makingoff.org/index.php?origem=busca&search_term=${preImdbE}&search_type=TP&search_sort_by=tid&search_sort_order=DESC&submit=Pesquisar]${preTitulosBrE}[/url][/size][/b][/color]
-  [color=#696969](${preTitulosOriE})[/color]
-  Direção: [b]${preDiretorE}[/b]
-  País: [b]${prePaisE}[/b]
-   
-  [url=https://www.imdb.com/title/${preImdbE}][img=http://i240.photobucket.com/albums/ff175/mfccorrea/MakingOff/IMDb36.jpg][/url][/tdGde][/table][/elenco]`
+document.querySelector('#premiados-disabled').style.display = `flex`;
 
+let premECLink = `[tr][posterMasc]**********[/posterMasc][infoMasc]**********[/infoMasc][/tr][tr][elenco][table][tdPeq][url=http://indice.makingoff.org/index.php?origem=busca&search_term=${preImdbE}&search_type=TP&search_sort_by=tid&search_sort_order=DESC&submit=Pesquisar][img=${preImgE}][/url][/tdPeq][tdGde][color=#000080][b][size=3][url=http://indice.makingoff.org/index.php?origem=busca&search_term=${preImdbE}&search_type=TP&search_sort_by=tid&search_sort_order=DESC&submit=Pesquisar]${preTitulosBrE}[/url][/size][/b][/color]
+[color=#696969](${preTitulosOriE})[/color]
+Direção: [b]${preDiretorE}[/b]
+País: [b]${prePaisE}[/b]
+
+[url=https://www.imdb.com/title/${preImdbE}][img=http://i240.photobucket.com/albums/ff175/mfccorrea/MakingOff/IMDb36.jpg][/url][/tdGde][/table][/elenco]`
+
+let premESLink = `[tr][posterMasc]**********[/posterMasc][infoMasc]**********[/infoMasc][/tr][tr][elenco][table][tdPeq][img=${preImgE}][/tdPeq][tdGde][color=#000080][b][size=3]${preTitulosBrE}[/size][/b][/color]
+[color=#696969](${preTitulosOriE})[/color]
+Direção: [b]${preDiretorE}[/b]
+País: [b]${prePaisE}[/b]
+   
+[url=https://www.imdb.com/title/${preImdbE}][img=http://i240.photobucket.com/albums/ff175/mfccorrea/MakingOff/IMDb36.jpg][/url]
+  
+[color=#ff0000][b]Indisponível[/b][/color][/tdGde][/table][/elenco]`;
+
+  let preTitulosBrD = document.querySelector('.premiados-titulo--d').value;
+  let preTitulosOriD = document.querySelector('.premiados-titulori--d').value;
+  let preDiretorD = document.querySelector('.premiados-diretor--d').value;
+  let prePaisD = document.querySelector('.premiados-pais--d').value;
+  let preImgD = document.querySelector('.premiados-img--d').value;
+  let preImdbD = document.querySelector('.premiados-imdb--d').value;
+
+
+  let premDCLink = `[info][table][tdPeq][url=http://indice.makingoff.org/index.php?origem=busca&search_term=${preImdbD}&search_type=TP&search_sort_by=tid&search_sort_order=DESC&submit=Pesquisar][img=${preImgD}][/url][/tdPeq][tdGde][color=#000080][b][size=3][url=http://indice.makingoff.org/index.php?origem=busca&search_term=${preImdbD}&search_type=TP&search_sort_by=tid&search_sort_order=DESC&submit=Pesquisar]${preTitulosBrD}[/url][/size][/b][/color]
+[color=#696969](${preTitulosOriD})[/color]
+Direção: [b]${preDiretorD}[/b]
+País: [b]${prePaisD}[/b]
+   
+[url=https://www.imdb.com/title/${preImdbD}][img=http://i240.photobucket.com/albums/ff175/mfccorrea/MakingOff/IMDb36.jpg][/url][/tdGde][/table][/info][/tr]`
+
+  let premDSLink = `[info][table][tdPeq][img=${preImgD}][/tdPeq][tdGde][color=#000080][b][size=3]${preTitulosBrD}[/size][/b][/color]
+[color=#696969](${preTitulosOriD})[/color]
+Direção: [b]${preDiretorD}[/b]
+País: [b]${prePaisD}[/b]
+   
+[url=https://www.imdb.com/title/${preImdbD}][img=http://i240.photobucket.com/albums/ff175/mfccorrea/MakingOff/IMDb36.jpg][/url]
+  
+[color=#ff0000][b]Indisponível[/b][/color][/tdGde][/table][/info][/tr]`
+
+
+
+  const textArea = document.querySelector('.resultado-area--premiados');
+  const checkE = document.querySelector('.checked-premiado--e');
+  const checkD = document.querySelector('.checked-premiado--d');
+
+  
+  textArea.innerHTML = ``;
+  if (preTitulosOriE.length === 0 && preTitulosOriD.length === 0){
+    textArea.innerHTML = `Adicione infos`
+  }else if  (preTitulosOriE.length === 0) {
+    if(checkD.checked){
+      textArea.innerHTML = premDCLink;
+    } else if (!checkD.checked) {
+      textArea.innerHTML = premDSLink;
+    }
+  } else if (preTitulosOriD.length === 0){
+    if(checkE.checked){
+      textArea.innerHTML = premECLink;
+    } else if (!checkE.checked) {
+      textArea.innerHTML = premESLink;
+    }
+  } else if (checkE.checked && checkD.checked){
+    textArea.innerHTML = premECLink + premDCLink;
+  } else if (!checkE.checked && !checkD.checked) {
+    textArea.innerHTML = premESLink + premDSLink;
+  } else if (checkE.checked && !checkD.checked) {
+    textArea.innerHTML = premECLink + premDSLink;
+  } else if (!checkE.checked && checkD.checked) {
+    textArea.innerHTML = premESLink + premDCLink;
+  } 
 });
 
 
