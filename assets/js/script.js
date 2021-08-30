@@ -107,16 +107,21 @@ btnGera.addEventListener('click', () => {
   let diretor = document.querySelectorAll('.lista-dados--diretor');
   let id = document.querySelectorAll('.lista-imdb--linkImdb');
   const anoFest = document.querySelector('.lista-festivais__ano').value;
+  let check = document.querySelectorAll('.check-list');
   opFest();
-  
+
   document.querySelector('#disabled').style.display = none;
   
-  
+  const textArea = document.querySelector('.resultado-area');
   textArea.innerHTML = `[center][img=${imgFest}][/center]\n\n
   [center][size=6][b][color=#000080]SELEÇÃO OFICIAL DE ${nomeFest.toUpperCase()} ${anoFest}[/color][/b][/size][/center]\n\n\n`
   textArea.innerHTML += `No ano de ${anoFest}, ${titulo.length} filmes concorreram ao ${nomeFest}. São eles:\n\n\n`
   for (let i = 0; i < titulo.length; i++) {
-    textArea.innerHTML += `[url=https://www.imdb.com/title/${id[i].value}/][img=https://imagizer.imageshack.us/a/img923/8099/6faAjm.jpg][/url] ${titulo[i].value}, de ${diretor[i].value}\n`;
+    if(check[i].checked && check[i].id === titulo[i].id){
+      textArea.innerHTML += `[url=https://www.imdb.com/title/${id[i].value}][img=http://imagizer.imageshack.us/a/img923/8099/6faAjm.jpg][/url] [b][url=http://indice.makingoff.org/index.php?search_term=${id[i].value}]${titulo[i].value}[/url], de ${diretor[i].value}[/b]\n`;
+    }else {
+      textArea.innerHTML += `[url=https://www.imdb.com/title/${id[i].value}/][img=https://imagizer.imageshack.us/a/img923/8099/6faAjm.jpg][/url] ${titulo[i].value}, de ${diretor[i].value}\n`;
+    }
   }
   textArea.innerHTML += `\n\n\nPara conferir os vencedores dos anos anteriores, visite a página do [b][url=${linkFest}][color=#008080]Festival de ${nomeFest}[/color][/url][/b] no Makingoff.`
     ;
@@ -198,6 +203,18 @@ btnMais.addEventListener('click', () => {
   inputId.innerHTML = 'buscar ID no MKO';
   inputId.onclick = btn_mko;
   divIMDb.append(inputId);
+
+  // ==== Tem no mko
+  const divTem = document.createElement('div');
+  div.append(divTem);
+  const labelTem = document.createElement('label');
+  labelTem.innerHTML = `Tem no MKO? SIM: `
+  divTem.append(labelTem);
+  const inputTem = document.createElement('input');
+  inputTem.type = 'checkbox';
+  inputTem.className = 'check-list';
+  inputTem.id = `${numAlea}`;
+  divTem.append(inputTem);
   
 
   proxLinha.append(div);
