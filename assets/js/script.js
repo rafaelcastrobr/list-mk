@@ -269,7 +269,7 @@ País: [b]${prePaisE}[/b]
    
 [url=https://www.imdb.com/title/${preImdbE}][img=http://i240.photobucket.com/albums/ff175/mfccorrea/MakingOff/IMDb36.jpg][/url]
   
-[color=#ff0000][b]Indisponível[/b][/color][/tdGde][/table][/elenco]`;
+[color=#cc0000][b]Indisponível[/b][/color][/tdGde][/table][/elenco]`;
 
   let preTitulosBrD = document.querySelector('.premiados-titulo--d').value;
   let preTitulosOriD = document.querySelector('.premiados-titulori--d').value;
@@ -293,7 +293,7 @@ País: [b]${prePaisD}[/b]
    
 [url=https://www.imdb.com/title/${preImdbD}][img=http://i240.photobucket.com/albums/ff175/mfccorrea/MakingOff/IMDb36.jpg][/url]
   
-[color=#ff0000][b]Indisponível[/b][/color][/tdGde][/table][/info][/tr]`
+[color=#cc0000][b]Indisponível[/b][/color][/tdGde][/table][/info][/tr]`
 
 
 
