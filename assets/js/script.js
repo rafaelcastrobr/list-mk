@@ -110,7 +110,7 @@ btnGera.addEventListener('click', () => {
   opFest();
   
   document.querySelector('#disabled').style.display = none;
-  
+  const textArea = document.querySelector('.resultado-area');
   
   textArea.innerHTML = `[center][img=${imgFest}][/center]\n\n
   [center][size=6][b][color=#000080]SELEÇÃO OFICIAL DE ${nomeFest.toUpperCase()} ${anoFest}[/color][/b][/size][/center]\n\n\n`
